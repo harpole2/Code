@@ -19,7 +19,8 @@ def get_densities():
     try:
       f = file(sys.argv[i])
     except IOError:                     
-      print "The file does not exist"
+      print "The file " + sys.argv[i] + " does not exist"
+      exit()
     i += 1
  
 # loop over all input files 
