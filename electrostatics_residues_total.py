@@ -15,7 +15,8 @@ def get_electrostatics():
   try:
     f = file(sys.argv[1])
   except IOError:                     
-    print "The file does not exist"
+    print "The file "+ sys.argv[1] + " does not exist"
+    exit()
 
 #make dictionary
   species_database = []
