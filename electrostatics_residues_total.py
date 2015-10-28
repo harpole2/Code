@@ -43,7 +43,7 @@ def get_electrostatics():
   totalBase=list()
 
 #find electrostatic amino acids
-  for species, primary in seq_dict.iteritems():
+  for species, primary in seq_dict.items():
    print ">"+species
  
    AA_number = len(primary)
