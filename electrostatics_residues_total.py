@@ -25,7 +25,7 @@ def get_electrostatics():
 #read file    
   for line in f:
     if line.startswith('>'):
-      name = line[1:].rstrip('\n')
+      name = line.rstrip('\n')
       species_database.append(name)
       seq_dict[name] = ''
     else:
