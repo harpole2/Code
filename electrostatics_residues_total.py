@@ -26,12 +26,10 @@ def get_electrostatics():
   for line in f:
     if line.startswith('>'):
       name = line[1:].rstrip('\n')
-      name = name.replace('_', ' ')
-      name = name.replace('-','')
       species_database.append(name)
       seq_dict[name] = ''
     else:
-      seq_dict[name] += line.rstrip('\n').rstrip('*')
+      seq_dict[name] += line.rstrip('\n').rstrip('*').replace('-','')
 
 #Print number of sequences in file            
   print "%d sequences found" % len(species_database)
@@ -46,9 +44,11 @@ def get_electrostatics():
 
 #find electrostatic amino acids
   for species, primary in seq_dict.iteritems():
-   print ">",species
+   print ">"+species
  
    AA_number = len(primary)
+   print "number of Amino acids: %d" % AA_number
+
 
    ASP = primary.count('d') + primary.count('D')
    print "number of Asp residues: %d" % ASP
