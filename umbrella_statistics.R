@@ -20,7 +20,8 @@ umbrella_statistics <- function(directory, outputname = "umbrella_stats.csv") {
         
         stastp <- str_locate_all(pattern = "_", runs[i])
         stastp <- unlist(stastp)
-        wind <- substr(runs[i], stastp[11]+1, stastp[12]-1)
+	len <- length(stastp)
+        wind <- substr(runs[i], stastp[len-1]+1, stastp[len]-1)
         wind <- gsub("p", ".", wind)
         wind <- gsub("m","-", wind)
         wind <- as.numeric(wind)
